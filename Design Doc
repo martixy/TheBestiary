@@ -1,0 +1,67 @@
+Bestiary
+
+
+- One page app(well 2)
+	- Search/list
+	- Edit view(of the creature)
+
+- Dice rolling strategies
+- Transfomers(from 3.5 to PF, etc.)
+
+
+
+- Generate mooks functionality
+	- Choose array (elite, etc)
+	- Choose level/class (including ranges, from a specific list, etc.)
+	- Choose prefer stats(e.g. dex, dex OR str)
+	- Templates: set what things can vary in what way
+
+- When a creature has an ability where a choice must be made, highlight that ability(yellow border, bg, whatever)
+
+
+
+- Basic data structures
+
+1. Number
+	- identifier [unique]
+	- label
+	- a list of numbers
+	- modifier
+
+2. Modifier
+	- type (game term)
+	- mult [default=1]
+	- add [default=0]
+
+3. Entity
+	- A collection of numbers
+
+
+1. Number
+	- id
+	- label
+	- list of modifiers
+2. Modifier
+	- type
+	- add [Int or Number, def = 0]
+	- mult [Int or Number, def = 1]
+
+N:{
+ id:"STR",
+ modifiers:[
+ 	0:M{type:"untyped",add:X}
+ ]
+}
+N:{
+ id:"BAB",
+ modifiers:[
+ 	0:M{type:"untyped",add:Y}
+ ]
+}
+N:{
+ id:"Melee Attack",
+ modifiers:[
+ 	0:M{type:"untyped",add:BAB},
+ 	1:M{type:"untyped",add:STR}
+ ]
+}
