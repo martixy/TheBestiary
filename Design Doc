@@ -37,31 +37,64 @@ Bestiary
 	- A collection of numbers
 
 
-1. Number
-	- id
-	- label
-	- list of modifiers
-2. Modifier
-	- type
-	- add [Int or Number, def = 0]
-	- mult [Int or Number, def = 1]
 
-N:{
- id:"STR",
- modifiers:[
- 	0:M{type:"untyped",add:X}
- ]
-}
-N:{
- id:"BAB",
- modifiers:[
- 	0:M{type:"untyped",add:Y}
- ]
-}
-N:{
- id:"Melee Attack",
- modifiers:[
- 	0:M{type:"untyped",add:BAB},
- 	1:M{type:"untyped",add:STR}
- ]
-}
+Anani's suggested structure v2:
+
+Rule library/registry (list)
+Entity library (list)
+Authentication and authorization related structures (w/e, not relevant)
+
+Entity
+- label
+- id
+- Rule olist
+- Pool list
+- Conditionals list
+
+Rule
+- name
+- notes
+- tag list
+- script(
+-- create pool
+-- add modifier to pool
+-- define function/lookup
+-- create conditional
+-- create content block
+)
+
+Function (always pure?) 
+- params
+- script
+
+Pool
+- id
+- label
+- tag list
+- modifier list
+- calculated
+- input (flag) 
+
+Modifier
+- add = (
+-- input? 
+-- 2 (flat) 
+-- dex (id)
+-- bonusSpells(wis) (function/lookup)
+-- ivan.dex (cross entity reference) 
+) 
+- multiply
+- description
+- type (to determine stacking)
+- source
+
+Conditional
+- name/id
+- condition script
+- currentState flag
+- onTrue script
+- onFalse script
+
+Content block:
+- user input
+- template?
