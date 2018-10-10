@@ -41,20 +41,21 @@ Bestiary
 Anani's suggested structure v2:
 
 Rule library/registry (list)
-Entity library (list)
+Creature library (list)
 Authentication and authorization related structures (w/e, not relevant)
 
-Entity
+Creature
 - label
 - id
-- Rule olist
+- ruleset (list)
 - Pool list
 - Conditionals list
 
 Rule
-- name
+- id
+- label
 - notes
-- tag list
+- tag list 
 - script(
 -- create pool
 -- add modifier to pool
@@ -64,23 +65,23 @@ Rule
 )
 
 Function (always pure?) 
+- id
 - params
 - script
 
-Pool
+Pool (all include user input)
 - id
 - label
 - tag list
 - modifier list
 - calculated
-- input (flag) 
 
 Modifier
 - add = (
 -- input? 
 -- 2 (flat) 
 -- dex (id)
--- bonusSpells(wis) (function/lookup)
+-- bonusSpells(wis, spelllevel) (function/lookup)
 -- ivan.dex (cross entity reference) 
 ) 
 - multiply
@@ -97,4 +98,4 @@ Conditional
 
 Content block:
 - user input
-- template?
+- view template?
