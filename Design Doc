@@ -20,21 +20,41 @@ Bestiary
 
 
 
-- Basic data structures
+- Basic data structures (v3)
 
-1. Number
-	- identifier [unique]
-	- label
-	- a list of numbers
-	- modifier
-
-2. Modifier
-	- type (game term)
-	- mult [default=1]
-	- add [default=0]
+1. Number, the number is actually a node in a directed graph, figure out the implementation details, the only valid graph search is to ensure no cycles
+    - identifier [unique]
+    - label
+    - parents (a list of Numbers, we definitely need this, so we can use them in basic calculations)
+    - children (a list of Numbers)
+    - type
+    - baseValue
+    - computer (a pointer to a predefined function like "add" or a user script, must return a Computation)
+    - cachedValue
+    
+2. Computation
+    - result
+    - displayableRepresentation
 
 3. Entity
-	- A collection of numbers
+    - A collection of numbers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
