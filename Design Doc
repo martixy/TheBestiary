@@ -43,6 +43,26 @@ Bestiary
 
 
 
+Technology stack:
+1. Front end
+	- Vue
+	- Pure CSS: https://purecss.io/
+2. Backend
+	- node.js
+	- websockets
+3. Persistence
+	- ArangoDB
+4. Toolchain
+	- Vagrant?
+	- VSCode
+	- Webpack
+
+
+
+
+
+
+
 
 
 
